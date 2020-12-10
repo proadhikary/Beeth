@@ -202,9 +202,9 @@ int Store_Song ()
     
     char artist_name [30], song_name[50];
     printf ("\nArtist: ");
-    scanf ("%s", artist_name);
+    scanf (" %[^\n]%*c", artist_name);
     printf ("Song: ");
-    scanf ("%s", song_name);
+    scanf (" %[^\n]%*c", song_name);
     printf ("\nSearching the song on the web...");
     sleep (1);
     printf ("\nSong Found... Downloading");
@@ -313,7 +313,7 @@ int create_playlist (int playlist_no, char playlist_name [10][20])
     system ("cls");
     printf ("\nEnter Playlist Name: ");
     begin_list [playlist_no - 1] = end_list [playlist_no - 1] = NULL;
-    scanf ("%s", playlist_name [playlist_no - 1]);
+    scanf (" %[^\n]%*c", playlist_name [playlist_no - 1]);
     if (playlist_name [playlist_no - 1][0] == '\n')
     {
         char temp [11] = "PLAYLIST ";
